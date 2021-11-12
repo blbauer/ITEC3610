@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>New Patient Form</title>
+<!-- The following should be a file in the "style" folder-->
+    <style>
+    .formlabel {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+        padding: 5px;
+        font-weight: bold;
+    }
+       .error {
+        color: red;
+        padding-left: 5px;
+    }
+    </style>
+</head>
+
+<body>
+<form id="NewPatientRegistration" action="https://brucebauer.info/assets/ITEC3650/datadump.php" method="post">
+<h2>New Patient Registration</h2>
+<h5>Please fill out the form below</h5>
+
+<label class="formlabel" for="FirstName">First Name:</label>
+<input type="text" id="FirstName" name="FirstName" size="30" maxlength="30"
+       data-rule-required="true"  data-msg-required="First Name is Required" >
+<label for="FirstName" class="error"></label>
+<br/>
+ 
+<label class="formlabel" for="Height">Height (inches):</label>
+<input type="text" id="Height" name="Height" size="3" maxlength="3"
+       data-rule-required="true"  data-msg-required="Height is Required" 
+       data-rule-number="true" data-msg-number="Height must be a number in inches"
+       data-rule-min="12" data-msg-min="Height must be greater than 12 inches"
+       data-rule-max="120" data-msg-max="Height must be less than 120 inches"
+       >
+<label for="Height" class="error"></label>
+    <br/>
+     
+<input type="submit" value="Submit Patient Form">
+</form>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    
+<!-- The following should be a file in your js folder -->
+<script>
+$( "#NewPatientRegistration" ).validate({
+
+});
+</script>
+</body>
+</html>
